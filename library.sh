@@ -2,7 +2,7 @@
 
 #Sends a webhook to infra-system-messages with the inc. argument as the text
 webhook() {
-  source webhook.cfg
+  source ./webhook.cfg
   curl -X POST --data-urlencode "payload={\"channel\": \"#infra-system-messages\", \"username\": \"robut\", \"text\": \"$1\", \"icon_emoji\": \":ghost:\"}" $webhook_url
 }
 
