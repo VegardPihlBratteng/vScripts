@@ -38,11 +38,12 @@ function search() {
 }
 
 # local scripts
-FILE=localScripts.sh
+FILE=localLibrary.sh
 if [ -f "$FILE" ]; then
-    . ./localScripts.sh
+    . ./localLibrary.sh
 else
-    touch localScripts.sh
+    touch localLibrary.sh
+    echo "Created local library file"
 fi
 
 echo "Script library sourced."
