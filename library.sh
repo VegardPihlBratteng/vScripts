@@ -1,8 +1,10 @@
 # public scripts
+CURDIR=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
+cd "$CURDIR"
 
 #Sends a webhook to infra-system-messages with the inc. argument as the text
 webhook() {
-  source ./webhook.cfg
+  . webhook.cfg
   curl -X POST --data-urlencode "payload={\"channel\": \"#infra-system-messages\", \"username\": \"robut\", \"text\": \"$1\", \"icon_emoji\": \":ghost:\"}" $webhook_url
 }
 
